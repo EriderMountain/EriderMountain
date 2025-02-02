@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EriderMountain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS de AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <!-- Hoja de estilos propia -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Botón para cambiar idioma (ES/EN) -->
+  <div class="language-toggle">
+    <button onclick="changeLanguage('es')">ES</button>
+    <button onclick="changeLanguage('en')">EN</button>
+  </div>
+
+  <!-- HEADER / MENÚ -->
+  <header class="main-header" id="menu" data-aos="fade-down">
+    <h1 class="site-title" id="site-title">EriderMountain</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#inicio" id="nav-home">Inicio</a></li>
+        <li><a href="#tours" id="nav-tours">Tours</a></li>
+        <li><a href="#nosotros" id="nav-about">Quiénes Somos</a></li>
+        <li><a href="#reserva" id="nav-reserve">Reserva</a></li>
+        <li><a href="#contacto" id="nav-contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN HERO CON VIDEO DE FONDO -->
+  <section class="hero-video-section">
+    <!-- VIDEO de fondo -->
+    <video 
+      class="hero-video" 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      id="heroVideo"
+    >
+      <source src="videos/tu_video.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+
+    <!-- Contenido superpuesto (texto, botones, etc.) -->
+    <div class="hero-content">
+      <h1>“DESCUBRE LA MONTAÑA COMO NUNCA ANTES”</h1>
+      <p>“Conecta con la naturaleza y lleva tus límites más allá en cada pedalada.”</p>
+      <a href="#tours" class="btn-cta">Ver Tours</a>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: ALQUILER E-BIKE -->
+  <section class="section grey-bg" id="alquiler-ebike">
+    <h2>Alquiler de eMTB / eBike</h2>
+    <p class="section-desc">
+      Disfruta de nuestras bicicletas eléctricas de montaña, preparadas para que vivas la mejor experiencia off-road.
+      Elige el modelo que más se adapte a tu estilo y prepárate para rodar sin límites.
+    </p>
+
+    <div class="cards-container">
+      <!-- 1. Modelo eBike #1 -->
+      <article class="card">
+        <img src="images/ebike_model1.jpg" alt="Modelo BEWATT CODE 1200" />
+        <h3>BEWATT CODE 1200</h3>
+        <p class="ebike-specs">
+          <strong>Motor:</strong> BAFANG M560 - 1200W/PEAK  
+          <br><strong>Autonomía:</strong> 95-180 km  
+          <br><strong>Tamaño Ruedas:</strong> 29”
+        </p>
+        <p class="ebike-price"><strong>125 €</strong> / día</p>
+        <button class="btn-cta" onclick="location.href='#reserva';">Reservar</button>
+      </article>
+
+      <!-- 2. Modelo eBike #2 -->
+      <article class="card">
+        <img src="images/ebike_model2.jpg" alt="Modelo BERRIA HP" />
+        <h3>BERRIA HP</h3>
+        <p class="ebike-specs">
+          <strong>Motor:</strong> BAFANG M510 - 800W/PEAK
+          <br><strong>Autonomía:</strong> 80-120 km  
+          <br><strong>Tamaño Ruedas:</strong> 29”
+        </p>
+        <p class="ebike-price"><strong>75 €</strong> / día</p>
+        <button class="btn-cta" onclick="location.href='#reserva';">Reservar</button>
+      </article>
+
+      <!-- 3. Modelo eBike #3 -->
+      <article class="card">
+        <img src="images/ebike_model3.jpg" alt="Modelo BERRIA CAYMAN" />
+        <h3>BERRIA CAYMAN</h3>
+        <p class="ebike-specs">
+          <strong>Motor:</strong> Bosch Performance CX 4G
+          <br><strong>Autonomía:</strong> 60-150 km  
+          <br><strong>Tamaño Ruedas:</strong> 29” delantera / 27.5” trasera
+        </p>
+        <p class="ebike-price"><strong>85 €</strong> / día</p>
+        <button class="btn-cta" onclick="location.href='#reserva';">Reservar</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN TOURS -->
+  <section class="section" id="tours">
+    <h2 data-aos="fade-up" id="tours-title">Nuestros Tours</h2>
+    <p data-aos="fade-up" id="tours-desc" class="section-desc">
+      Descubre experiencias para todos los gustos, desde principiantes hasta ciclistas expertos.
+    </p>
+
+    <div class="cards-container">
+      <!-- Tour 1 -->
+      <article class="card" data-aos="fade-right">
+        <img src="images/Hero-eCloudraker.jpg" alt="Tour Bosque Encantado">
+        <h3 id="tour-1-title">EriderCasillas Weekend</h3>
+        <p id="tour-1-desc">
+          Sumérgete en senderos mágicos rodeados de árboles centenarios.
+        </p>
+        <a href="tours.html#bosque" class="btn-secondary">Ver detalles</a>
+      </article>
+
+      <!-- Tour 2 -->
+      <article class="card" data-aos="fade-up">
+        <img src="images/12342.webp" alt="Ruta de la Montaña">
+        <h3 id="tour-2-title">Ruta de la Montaña</h3>
+        <p id="tour-2-desc">
+          Sube hasta picos impresionantes y siente la adrenalina en e-bike.
+        </p>
+        <a href="tours.html#montana" class="btn-secondary">Ver detalles</a>
+      </article>
+
+      <!-- Tour 3 -->
+      <article class="card" data-aos="fade-left">
+        <img src="images/IMG_4838.JPG" alt="Sendero del Río">
+        <h3 id="tour-3-title">Sendero del Río</h3>
+        <p id="tour-3-desc">
+          Recorre un trayecto refrescante junto a la corriente del agua.
+        </p>
+        <a href="tours.html#rio" class="btn-secondary">Ver detalles</a>
+      </article>
+
+      <!-- Tour 4 -->
+      <article class="card" data-aos="fade-left">
+        <img src="images/Focus-JAM2.webp" alt="EriderCasillas Weekend">
+        <h3 id="tour-4-title">EriderCasillas Weekend</h3>
+        <p id="tour-4-desc">
+          Tres días en la sierra con rutas y gastronomía local.
+        </p>
+        <a href="tours.html#casillas" class="btn-secondary">Ver detalles</a>
+      </article>
+
+      <!-- Tour 5: Ruta Mirador Panorámico -->
+      <article class="card" data-aos="fade-right">
+        <img src="images/ruta_mirador.jpg" alt="Ruta Mirador Panorámico">
+        <h3 id="tour-5-title">Ruta Mirador Panorámico</h3>
+        <p id="tour-5-desc">
+          Sube en eMTB para descubrir vistas espectaculares de la región.  
+          Un recorrido que combina ascensos suaves y miradores inolvidables.
+        </p>
+        <a href="tours.html#mirador" class="btn-secondary">Ver detalles</a>
+      </article>
+
+      <!-- Tour 6: Travesía Valle Encantado -->
+      <article class="card" data-aos="fade-left">
+        <img src="images/travesia_valle.jpg" alt="Travesía Valle Encantado">
+        <h3 id="tour-6-title">Travesía Valle Encantado</h3>
+        <p id="tour-6-desc">
+          Explora con tu eMTB este valle mágico lleno de bosques, arroyos y caminos solitarios.  
+          Perfecto para sumergirte de lleno en la naturaleza.
+        </p>
+        <a href="tours.html#valleEncantado" class="btn-secondary">Ver detalles</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN QUIÉNES SOMOS -->
+  <section class="section grey-bg" id="nosotros">
+    <h2 data-aos="fade-up" id="about-title">Quiénes Somos</h2>
+    <p data-aos="fade-up" id="about-desc" class="section-desc">
+      Un equipo de guías locales y amantes de la bicicleta eléctrica.
+    </p>
+
+    <div class="about-container" data-aos="fade-up">
+      <img src="images/switzerland-EMTB.jpg" alt="Equipo EriderMountain">
+      <div>
+        <h3 id="about-subtitle">Nuestra Historia</h3>
+        <p id="about-text">
+          EriderMountain nace en 2015 con la misión de conectar a las personas con la naturaleza a través de la bicicleta eléctrica.  
+          Creemos en un turismo sostenible, donde cada aventura respete el entorno y contribuya al desarrollo local.  
+          Nuestro equipo está formado por apasionados del ciclismo, guías certificados y personal de apoyo siempre dispuesto a ayudarte.  
+          ¡Queremos que te lleves recuerdos inolvidables y la satisfacción de descubrir la montaña como nunca antes!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN RESERVA -->
+  <section class="section" id="reserva">
+    <h2>Reserva Tu Experiencia</h2>
+    <p class="section-desc">
+      Elige un tour, EriderCasillas Weekend (2 noches, 1 noche o solo día) o el alquiler de eMTB.  
+      Indica la fecha de inicio y, si corresponde, los días o subopciones.
+      En menos de 24 horas recibirás nuestra confirmación por email.
+    </p>
+
+    <form class="reserve-form" id="reserveForm">
+      <!-- Campo: Nombre -->
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <!-- Campo: Email -->
+      <label for="email">Correo</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Seleccionar Tour / EriderCasillas / Alquiler -->
+      <label for="opcionSeleccionada">Selecciona Tour / Casillas / Alquiler</label>
+      <select id="opcionSeleccionada" name="opcionSeleccionada" required>
+        <option value="">-- Elige una opción --</option>
+        <option value="bosque">Bosque Encantado</option>
+        <option value="montana">Ruta de la Montaña</option>
+        <option value="rio">Sendero del Río</option>
+        <option value="eriderCasillas">EriderCasillas Weekend</option>
+        <option value="alquiler">Alquiler eMTB / eBike</option>
+      </select>
+
+      <!-- BLOQUE ESPECÍFICO: ERIDERCASILLAS (2 noches, 1 noche, solo día) -->
+      <div id="camposCasillas" style="display: none;">
+        <label for="opcionCasillas">Modalidad EriderCasillas</label>
+        <select id="opcionCasillas" name="opcionCasillas">
+          <option value="">-- Elige modalidad --</option>
+          <option value="2noches">2 noches</option>
+          <option value="1noche">1 noche</option>
+          <option value="soloDia">Solo día</option>
+        </select>
+      </div>
+
+      <!-- BLOQUE ESPECÍFICO: ALQUILER (nº días, modelo de eMTB) -->
+      <div id="camposAlquiler" style="display: none;">
+        <label for="numeroDias">¿Cuántos días?</label>
+        <input type="number" id="numeroDias" name="numeroDias" min="1" max="14" value="1">
+
+        <label for="modeloEbike">Modelo de eMTB</label>
+        <select id="modeloEbike" name="modeloEbike">
+          <option value="">-- Elige el modelo --</option>
+          <option value="BEWATT CODE">BEWATT CODE</option>
+          <option value="BERRIA HP">BERRIA HP</option>
+          <option value="BERRIA CAYMAN">BERRIA CAYMAN</option>
+        </select>
+      </div>
+
+      <!-- Fecha (inicio) -->
+      <label for="fecha">Fecha</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <!-- Nº Personas (o Participantes) -->
+      <label for="personas">Nº Personas</label>
+      <input type="number" id="personas" name="personas" min="1" required>
+
+      <p class="note">
+        Pago por Bizum o transferencia bancaria. Una vez confirmada tu reserva, te enviaremos los datos para el abono.
+      </p>
+
+      <button type="submit" class="btn-cta">Reservar</button>
+    </form>
+
+    <!-- Mensaje de confirmación (oculto inicialmente) -->
+    <div id="reserve-success" style="display: none; color: green; margin-top: 1rem;">
+      <p>¡Tu reserva ha sido enviada! Pronto te contactaremos.</p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN CONTACTO -->
+  <section class="section grey-bg" id="contacto">
+    <h2 data-aos="fade-up" id="contact-title">Contacto</h2>
+    <p data-aos="fade-up" id="contact-desc" class="section-desc">
+      ¿Dudas, sugerencias o información adicional? Estamos para ayudarte.
+    </p>
+
+    <div class="contact-info" data-aos="fade-up">
+      <p><strong id="contact-phone-label">Teléfono:</strong> +34 686 936 860 SOLO Whatsapp</p>
+      <p><strong id="contact-email-label">Email:</strong> eridersemtb@gmail.com</p>
+      <p><strong id="contact-addr-label">Dirección:</strong> C/ Virgen del Puerto, 12, 28607, España</p>
+      <p>Horario de atención: Lunes a Viernes, 9:00 - 18:00</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>&copy; 2025 EriderMountain SLU - Vive la montaña, vive la aventura.</p>
+  </footer>
+
+  <!-- Librería AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Script propio -->
+  <script src="js/main.js"></script>
+
+  <script>
+    // Inicializa AOS
+    AOS.init();
+  </script>
+
+  <!-- ===================== EmailJS y envío del formulario ===================== -->
+  <!-- 1) Incluimos la librería EmailJS (ver README de EmailJS para más detalles) -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      // Reemplaza "TU_USER_ID" con el que te proporciona EmailJS
+      emailjs.init("5ybi2OAp02a3Pwjd8");
+    })();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const selectOpcion = document.getElementById("opcionSeleccionada");
+      const camposCasillas = document.getElementById("camposCasillas");
+      const camposAlquiler = document.getElementById("camposAlquiler");
+
+      const form = document.getElementById("reserveForm");
+      const successMsg = document.getElementById("reserve-success");
+
+      // Mostrar/ocultar campos según la selección
+      selectOpcion.addEventListener("change", function() {
+        const valor = this.value;
+        camposCasillas.style.display = "none";
+        camposAlquiler.style.display = "none";
+
+        if (valor === "eriderCasillas") {
+          camposCasillas.style.display = "block";
+        } else if (valor === "alquiler") {
+          camposAlquiler.style.display = "block";
+        }
+      });
+
+      // Envío del formulario
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // 1) Recogemos los datos del formulario
+        const nombre = document.getElementById("nombre").value;
+        const correo = document.getElementById("email").value;
+        const opcionSeleccionada = document.getElementById("opcionSeleccionada").value;
+        const opcionCasillas = document.getElementById("opcionCasillas").value;
+        const numeroDias = document.getElementById("numeroDias").value;
+        const modeloEbike = document.getElementById("modeloEbike").value;
+        const fecha = document.getElementById("fecha").value;
+        const personas = document.getElementById("personas").value;
+
+        // 2) Creamos el objeto con parámetros para EmailJS
+        //    Estos nombres deben coincidir con los "merge fields"
+        //    o variables que definas en tu plantilla de EmailJS.
+        const templateParams = {
+          to_email: "eridersembt@gmail.com",  // Email de destino
+          nombre: nombre,
+          correo: correo,
+          opcionSeleccionada: opcionSeleccionada,
+          opcionCasillas: opcionCasillas,
+          numeroDias: numeroDias,
+          modeloEbike: modeloEbike,
+          fecha: fecha,
+          personas: personas
+        };
+
+        // 3) Llamamos a emailjs.send
+        //    Reemplaza "TU_SERVICE_ID" y "TU_TEMPLATE_ID" con los que te dé EmailJS.
+        emailjs.send("service_5msbrhi", "template_ludfbxb", templateParams)
+          .then(function(response) {
+            console.log("¡Email enviado con éxito!", response.status, response.text);
+            // Mostramos mensaje de éxito
+            successMsg.style.display = "block";
+            // Reseteamos el formulario
+            form.reset();
+            // Ocultamos bloques condicionales
+            camposCasillas.style.display = "none";
+            camposAlquiler.style.display = "none";
+          }, function(error) {
+            console.error("Error al enviar el email:", error);
+            alert("Ocurrió un problema al enviar la reserva. Intenta de nuevo.");
+          });
+      });
+    });
+  </script>
+  <!-- ===================== Fin envío del formulario ===================== -->
+
+</body>
+</html>

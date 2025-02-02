@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle de Ruta - EriderMountain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ================================
+       Fondo de la página con la imagen mapa.png
+       ================================ */
+    body {
+      background-image: url('images/mapa.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ================================
+       Animaciones y keyframes
+       ================================ */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    /* ================================
+       Animación del Header
+       ================================ */
+    header {
+      animation: fadeInDown 0.8s ease-out;
+    }
+    
+    /* ================================
+       Cajas de Precio
+       ================================ */
+    .price-box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .price-box {
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    /* ================================
+       Pestañas
+       ================================ */
+    .tabs-menu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      gap: 10px;
+      justify-content: center;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .tabs-menu li {
+      padding: 10px 20px;
+      background: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .tabs-menu li:hover {
+      background: #e0e0e0;
+      transform: scale(1.05);
+    }
+    .tabs-menu li.active {
+      background: #ddd;
+      font-weight: bold;
+      border-color: #bbb;
+      animation: pulse 0.6s ease;
+    }
+    
+    /* Transición para el contenido de cada pestaña */
+    .tab-panel {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .tab-panel.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* ================================
+       Layout: pestañas encima y galería abajo
+       ================================ */
+    .tabs-and-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    /* ================================
+       Galería de Fotos
+       ================================ */
+    .gallery-container img {
+      transition: transform 0.3s ease;
+      animation: zoomIn 1s ease-out;
+    }
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <h1 class="site-title">EriderMountain</h1>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="tours.html">Tours</a></li>
+      <li><a href="index.html#reserva">Reserva</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- CONTENEDOR PRINCIPAL DE LA RUTA -->
+<main class="route-details">
+  <!-- NOMBRE DE LA RUTA -->
+  <h2 class="route-title">Ruta de Casillas y Valle de Iruela</h2>
+
+  <!-- BLOQUES DE INFORMACIÓN SUPERIOR (BADGES) -->
+  <div class="route-info">
+    <div class="info-block">
+      <span class="info-label">Duración</span>
+      <span class="info-value">3 días</span>
+    </div>
+    <div class="info-block">
+      <span class="info-label">Distancia</span>
+      <span class="info-value">85 km <small>(aprox.)</small></span>
+    </div>
+    <div class="info-block">
+      <span class="info-label">Desnivel +</span>
+      <span class="info-value">1800 m</span>
+    </div>
+    <div class="info-block">
+      <span class="info-label">Desnivel -</span>
+      <span class="info-value">1850 m</span>
+    </div>
+    <div class="info-block">
+      <span class="info-label">Nivel físico</span>
+      <span class="info-value">Medio</span>
+    </div>
+    <div class="info-block">
+      <span class="info-label">Nivel técnico</span>
+      <span class="info-value">Medio</span>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL: ASIDE (IZQUIERDA) + TABS Y GALERÍA (DERECHA) -->
+  <div class="route-content">
+    <!-- LADO IZQUIERDO: INFORMACIÓN DE PRECIOS/RESERVA -->
+    <aside class="route-aside">
+      <aside class="route-aside">
+        <!-- CONTENEDOR para las cajas de precio -->
+        <div class="price-box-container">
+          <div class="price-box">
+            <h3>FIN DE SEMANA 2 Noches</h3>
+            <p class="price">295,00 €/persona<small> +120,00€/acompañante</small></p>
+            <a href="index.html#reserva" class="btn-reserve">Reservar</a>
+          </div>
+          <div class="price-box">
+            <h3>FIN DE SEMANA 1 Noche</h3>
+            <p class="price">195,00 €/persona<small> +60,00€/acompañante</small></p>
+            <a href="index.html#reserva" class="btn-reserve">Reservar</a>
+          </div>
+          <div class="price-box">
+            <h3>SOLO UN DÍA</h3>
+            <p class="price">48,00 €/persona</p>
+            <a href="index.html#reserva" class="btn-reserve">Reservar</a>
+          </div>
+        </div>
+        <div class="include-box">
+          <h4>¿Qué incluye? PACK 2 NOCHES ------------------------------------- PACK 1 NOCHES</h4>
+          <ul>
+            <li>2 días de e-bike en zona de Casillas, La Adrada y Piedralave.-------- Incluido. </li>
+            <li>2 noches en Hotel Rural Eras del Poeta.-------------------------------. 1 noche de Hotel.</li>
+            <li>2 desayunos y 2 cenas con gastronomía local.------------------------ 1 desayuno y 1 cena.</li>
+            <li>Tapas y cervecita tras la ruta del sábado.------------------------------ Incluido</li>
+            <li>Prueba de eMTB (BEWATT y otras marcas).---------------------------- Incluido</li>
+            <li>Sorpresa gastronómica.------------------------------------------------- Incluido</li>
+            <li>Sorteos.------------------------------------------------------------------ Incluido</li>
+            <li><h4>SOLO UN DIA </h4></li>
+            <li>Tapas y cervecita tras la ruta del sábado.</li>
+            <li>Prueba de eMTB (BEWATT y otras marcas).</li>
+            <li>Sorpresa gastronómica.</li>
+            <li>Sorteos.</li>
+          </ul>
+        </div>
+      </aside>
+
+    <!-- LADO DERECHO: PESTAÑAS ENCIMA DE LA GALERÍA -->
+    <div class="tabs-and-gallery">
+      <!-- PESTAÑAS (TABS) -->
+      <section class="route-tabs">
+        <!-- Barra de pestañas en horizontal -->
+        <ul class="tabs-menu">
+          <li class="active" data-tab="general">Características generales</li>
+          <li data-tab="itinerario">Itinerario</li>
+          <li data-tab="nivel">Nivel físico/técnico</li>
+          <li data-tab="logistica">Logística</li>
+          <li data-tab="alojamiento">Alojamiento</li>
+          <li data-tab="actividades">Otras actividades</li>
+          <li data-tab="faqs">Preguntas frecuentes</li>
+        </ul>
+
+        <!-- Contenido de pestañas -->
+        <div class="tabs-content">
+          <div class="tab-panel active" id="general">
+            <h3>Características generales</h3>
+            <p>
+              Esta escapada de 3 días combina la emoción de la e-bike con el encanto de la Sierra de Gredos.
+              Las rutas cubren caminos boscosos y ascensos moderados, ofreciendo panorámicas preciosas.
+            </p>
+            <p>
+              Además de pedalear, disfrutarás de la <strong>mejor gastronomía local</strong> y podrás probar distintos modelos
+              de eMTB gracias a la colaboración con Bewatt.
+            </p>
+          </div>
+          <div class="tab-panel" id="itinerario">
+            <h3>Itinerario</h3>
+            <ul>
+              <li><strong>Viernes:</strong> Recepción en Hotel Rural Eras del Poeta, briefing de la ruta.</li>
+              <li><strong>Sábado:</strong>
+                <ul>
+                  <li>Ruta e-bike por Casillas, La Adrada y Piedralave (dificultad media).</li>
+                  <li>Tapas y cerveza post-ruta.</li>
+                  <li>Tarde de prueba eMTB y sorpresa gastronómica.</li>
+                </ul>
+              </li>
+              <li><strong>Domingo:</strong>
+                <ul>
+                  <li>Ruta por El Castallar del Tiemblo y Valle de Iruela (dificultad media).</li>
+                  <li>Charla final y despedida.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="nivel">
+            <h3>Nivel físico/técnico</h3>
+            <p>
+              Ambas rutas tienen un nivel físico <strong>medio</strong>, con desniveles moderados y tramos de subida.  
+              El nivel técnico también es <strong>medio</strong>, con senderos que requieren cierta habilidad básica en MTB,
+              pero son asequibles para la mayoría de ciclistas habituados.
+            </p>
+            <img src="https://via.placeholder.com/400x100?text=Gr%C3%A1fica+desnivel+aprox." alt="Gráfica de desnivel" class="graph-img">
+          </div>
+          <div class="tab-panel" id="logistica">
+            <h3>Logística</h3>
+            <ul>
+              <li>Transporte hasta el hotel <strong>no</strong> incluido (opcional con coste adicional).</li>
+              <li>Avituallamiento durante la ruta del sábado y domingo.</li>
+              <li>Guías especializados en e-MTB y apoyo mecánico básico.</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="alojamiento">
+            <h3>Alojamiento</h3>
+            <p>
+              El Hotel Rural Eras del Poeta está situado en la zona alta de Casillas,
+              con vistas espectaculares a los valles. Habitaciones dobles o individuales,
+              con baño privado y desayuno incluido.
+            </p>
+          </div>
+          <div class="tab-panel" id="actividades">
+            <h3>Otras actividades</h3>
+            <ul>
+              <li>Degustación de productos locales (miel, quesos, embutidos).</li>
+              <li>Cata de cerveza artesanal tras la ruta del sábado.</li>
+              <li>Posibilidad de senderismo ligero o paseo cultural por pueblos cercanos (La Adrada).</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="faqs">
+            <h3>Preguntas frecuentes</h3>
+            <p><strong>¿Necesito una e-bike propia?</strong>  
+              No es obligatorio. Tenemos e-bikes de alquiler (con suplemento).
+            </p>
+            <p><strong>¿Se requiere experiencia previa en MTB?</strong>  
+              Nivel medio de forma física y algo de experiencia en bici de montaña.  
+              Es recomendable haber hecho rutas en bici anteriormente.
+            </p>
+            <p><strong>¿Cómo se realiza el pago?</strong>  
+              Por Bizum o transferencia bancaria. Tras la confirmación de plazas, te enviaremos los datos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERÍA DE FOTOS -->
+      <section class="route-gallery">
+        <h3>Galería de Imágenes de las rutas y el Hotel</h3>
+        <div class="gallery-container">
+          <figure>
+            <img src="images/1.jpg" alt="EriderCasillas Weekend">
+            <figcaption>EriderCasillas Weekend</figcaption>
+            <img src="images/0.jpg" alt="Subida en eMTB">
+            <figcaption>EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/2.jpg" alt="Camino boscoso">
+            <figcaption>EriderCasillas Weekend</figcaption>
+            <img src="images/5.jpg" alt="EriderCasillas Weekend">
+            <figcaption>EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/3.jpg" alt="Subida en eMTB">
+            <figcaption>EriderCasillas Weekend</figcaption>
+            <img src="images/4.jpg" alt="Panorámica de Casillas">
+            <figcaption>EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/6.jpg" alt="Subida en eMTB">
+            <figcaption>EriderCasillas Weekend</figcaption>
+            <img src="images/1.jpg" alt="Panorámica de Casillas">
+            <figcaption>EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/7.jpg" alt="Camino boscoso">
+            <figcaption>Ruta de Casillas y Valle de Iruela</figcaption>
+          </figure>
+          <figure>
+            <img src="images/8.jpg" alt="Subida en eMTB">
+            <figcaption>Ruta de Casillas y Valle de Iruela</figcaption>
+            <img src="images/1.jpg" alt="Panorámica de Casillas">
+            <figcaption>Ruta de Casillas y Valle de Iruela</figcaption>
+          </figure>
+          <figure>
+            <img src="images/9.jpg" alt="Camino boscoso">
+            <figcaption>Ruta de Casillas y Valle de Iruela</figcaption>
+          </figure>
+          <figure>
+            <img src="images/41.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+            <img src="images/40.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/42.jpg" alt="EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+            <img src="images/45.jpg" alt="EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/43.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+            <img src="images/44.jpg" alt="Panorámica de Casillas">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/46.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+            <img src="images/39.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/47.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/48.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+            <img src="images/34.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+          <figure>
+            <img src="images/50.jpg" alt="Hotel EriderCasillas Weekend">
+            <figcaption>Hotel EriderCasillas Weekend</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="main-footer">
+  <p>&copy; 2025 EriderMountain. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Script para pestañas -->
+<script>
+  const tabsMenu = document.querySelectorAll(".tabs-menu li");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabsMenu.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabsMenu.forEach(item => item.classList.remove("active"));
+      tabPanels.forEach(panel => panel.classList.remove("active"));
+
+      tab.classList.add("active");
+      const tabTarget = tab.getAttribute("data-tab");
+      const panelToShow = document.getElementById(tabTarget);
+      panelToShow.classList.add("active");
+    });
+  });
+</script>
+
+<!-- Lightbox (modal) oculto -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-img" id="lightboxImg">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- Script para Lightbox -->
+<script>
+  const galleryImages = document.querySelectorAll('.gallery-container img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = img.alt;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
